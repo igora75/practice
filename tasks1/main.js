@@ -344,5 +344,22 @@
 
 // document.write(`${a} ${b} ${c}`);
 
-
+//2
+let light = ' ';
+while (light) {
+    light = prompt('Введіть колір: ');
+    switch (light) {
+        case 'зелений':
+            document.write('іди');
+            break;
+        case 'жовтий':
+            document.write('чекай');
+            break;
+        case 'червоний':
+            document.write('стій');
+            break;
+        default:
+            document.write('роби що хочеш');
+    }
+}
 
