@@ -191,3 +191,149 @@
 // console.log(str);
 
 //37
+// let arr = ['a', 'b', 'c'];
+
+// for (let i of [1, 2, 3]) {
+//     arr.push(i);
+// }
+
+// console.log(arr);
+
+//38
+// let arr = [1, 2, 3];
+// let arr2 = [];
+
+// for (let i = arr.length - 1; i >= 0; i--) {
+//     arr2.push(arr[i]);
+// }
+
+// console.log(arr2);
+
+//39
+// let arr = [1, 2, 3];
+
+// arr.push(4, 5, 6)
+
+// console.log(arr);
+
+//40
+// let arr = [1, 2, 3];
+
+// arr.unshift(4, 5, 6);
+
+// console.log(arr);
+
+//41
+// let arr = ['js', 'css', 'jq'];
+// document.write(arr.shift());
+
+//42
+// let arr = ['js', 'css', 'jq'];
+// document.write(arr.pop());
+
+//43
+// let arr = [1, 2, 3, 4, 5];
+// console.log(arr.slice(3));
+
+//44
+// let arr1 = [1, 2, 3, 4, 5];
+// console.log(arr1.slice(0, 2));
+
+//45
+// let arr2 = [1, 2, 3, 4, 5];
+// arr2.splice(1, 2);
+// console.log(arr2);
+
+//46
+// let arr3 = [1, 2, 3, 4, 5];
+// arr3.splice(3, 0, 'a', 'b', 'c');
+// console.log(arr3);
+
+//47
+// let arr4 = [1, 2, 3, 4, 5];
+// arr4.splice(1, 0, 'a', 'b');
+// arr4.splice(6, 0, 'c');
+// arr4.splice(8, 0, 'e');
+// console.log(arr4);
+
+//48
+// let arr = [0, 10, 47, -34, 189, 34, 0.75, 11, 4, 678];
+// for (let i of arr) {
+//     if (!(i % 2)) {
+//         console.log(i);
+//     }
+// }
+
+//49
+// let arr = [0, 10, 47, -34, 189, 34, 0.75, 11, 4, 678];
+// let arr1 = [];
+// for (let i of arr) {
+//     arr1.push(i);
+// }
+// console.log(arr1);
+
+//50
+// let arr = [0, 10, 47, -34, 189, 34, 0.75, 11, 4, 678];
+// let arr1 = [];
+// for (let i = 0; i < arr.length; i++) {
+//     arr1[i] = arr[i];
+// }
+// console.log(arr1);
+
+//55
+let arr = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
+
+let i = 0;
+while (i < arr.length) {
+    console.log(arr[i]);
+    i++;
+}
+
+for (let i of arr) {
+    console.log(i);
+}
+
+i = 0;
+while (i < arr.length) {
+    if (i % 2) {
+        console.log(arr[i]);
+    }
+    i++;
+}
+
+for (let i = 0; i < arr.length; i++) {
+    if (i % 2) {
+        console.log(arr[i]);
+    }
+}
+
+i = 0;
+while (i < arr.length) {
+    if (!(arr[i] % 2)) {
+        console.log(arr[i]);
+    }
+    i++;
+}
+
+for (let i of arr) {
+    if (!(i % 2)) {
+        console.log(i);
+    }
+}
+
+arr1 = [];
+for (let i = 0; i < arr.length; i++) {
+    if (!(arr[i] % 3)) {
+        arr1[i] = 'okten';
+    } else {
+        arr1[i] = arr[i];
+    }
+}
+console.log(arr1);
+
+for (let i = arr.length - 1; i >= 0; i--) {
+    console.log(arr[i]);
+}
+
+//64
+
