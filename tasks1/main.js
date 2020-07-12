@@ -345,20 +345,53 @@
 // document.write(`${a} ${b} ${c}`);
 
 //2
-let light = ' ';
-while (light) {
-    light = prompt('Введіть колір: ');
-    switch (light) {
-        case 'зелений':
-            document.write('іди');
-            break;
-        case 'жовтий':
-            document.write('чекай');
-            break;
-        case 'червоний':
-            document.write('стій');
-            break;
-        default:
-            document.write('роби що хочеш');
-    }
-}
+// light = prompt('Введіть колір: ');
+// switch (light) {
+//     case 'зелений':
+//         document.write('іди');
+//         break;
+//     case 'жовтий':
+//         document.write('чекай');
+//         break;
+//     case 'червоний':
+//         document.write('стій');
+//         break;
+//     default:
+//         document.write('роби що хочеш');
+
+// }
+
+
+//3
+// light = prompt('Введіть колір: ');
+// isRoadClear = confirm('Є авто на дорозі?');
+
+// switch (light) {
+//     case 'зелений':
+//         if (isRoadClear) {
+//             document.write('подожди пока нарушители проедут')
+//         }
+//         else {
+//             document.write('іди');
+//         }
+//         break;
+//     case 'жовтий':
+//         if (isRoadClear) {
+//             document.write('чекай')
+//         }
+//         else {
+//             document.write('всерівно чекай');
+//         }
+//         break;
+//     case 'червоний':
+//         if (isRoadClear) {
+//             document.write('стій і чекай')
+//         }
+//         else {
+//             document.write('всерівно чекай');
+//         }
+//         break;
+//     default:
+//         document.write('роби що хочеш');
+
+// }
