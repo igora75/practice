@@ -281,59 +281,229 @@
 // console.log(arr1);
 
 //55
-let arr = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
+// let arr = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
 
-let i = 0;
-while (i < arr.length) {
-    console.log(arr[i]);
-    i++;
-}
+// let i = 0;
+// while (i < arr.length) {
+//     console.log(arr[i]);
+//     i++;
+// }
 
-for (let i of arr) {
-    console.log(i);
-}
+// for (let i of arr) {
+//     console.log(i);
+// }
 
-i = 0;
-while (i < arr.length) {
-    if (i % 2) {
-        console.log(arr[i]);
-    }
-    i++;
-}
+// i = 0;
+// while (i < arr.length) {
+//     if (i % 2) {
+//         console.log(arr[i]);
+//     }
+//     i++;
+// }
 
-for (let i = 0; i < arr.length; i++) {
-    if (i % 2) {
-        console.log(arr[i]);
-    }
-}
+// for (let i = 0; i < arr.length; i++) {
+//     if (i % 2) {
+//         console.log(arr[i]);
+//     }
+// }
 
-i = 0;
-while (i < arr.length) {
-    if (!(arr[i] % 2)) {
-        console.log(arr[i]);
-    }
-    i++;
-}
+// i = 0;
+// while (i < arr.length) {
+//     if (!(arr[i] % 2)) {
+//         console.log(arr[i]);
+//     }
+//     i++;
+// }
 
-for (let i of arr) {
-    if (!(i % 2)) {
-        console.log(i);
-    }
-}
+// for (let i of arr) {
+//     if (!(i % 2)) {
+//         console.log(i);
+//     }
+// }
 
-arr1 = [];
-for (let i = 0; i < arr.length; i++) {
-    if (!(arr[i] % 3)) {
-        arr1[i] = 'okten';
-    } else {
-        arr1[i] = arr[i];
-    }
-}
-console.log(arr1);
+// arr1 = [];
+// for (let i = 0; i < arr.length; i++) {
+//     if (!(arr[i] % 3)) {
+//         arr1[i] = 'okten';
+//     } else {
+//         arr1[i] = arr[i];
+//     }
+// }
+// console.log(arr1);
 
-for (let i = arr.length - 1; i >= 0; i--) {
-    console.log(arr[i]);
-}
+// for (let i = arr.length - 1; i >= 0; i--) {
+//     console.log(arr[i]);
+// }
 
 //64
+// let arr = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
 
+// let i = arr.length - 1;
+// while (i >= 0) {
+//     console.log(arr[i]);
+//     i--;
+// }
+
+// for (let i = arr.length - 1; i >= 0; i--) {
+//     console.log(arr[i]);
+// }
+
+// i = arr.length - 1;
+// while (i >= 0) {
+//     if (i % 2) {
+//         console.log(arr[i]);
+//     }
+//     i--;
+// }
+
+// for (let i = arr.length - 1; i >= 0; i--) {
+//     if (i % 2) {
+//         console.log(arr[i]);
+//     }
+// }
+
+// i = arr.length - 1;
+// while (i >= 0) {
+//     if (!(arr[i] % 2)) {
+//         console.log(arr[i]);
+//     }
+//     i--;
+// }
+
+// for (let i = arr.length - 1; i >= 0; i--) {
+//     if (!(arr[i] % 2)) {
+//         console.log(arr[i]);
+//     }
+// }
+
+// arr1 = [];
+// for (let i = arr.length - 1; i >= 0; i--) {
+//     if (!(arr[i] % 3)) {
+//         arr1[i] = 'okten';
+//     } else {
+//         arr1[i] = arr[i];
+//     }
+// }
+// console.log(arr1);
+
+//73
+// let arr = [];
+
+// for (let i = 0; i < 100; i++) {
+//     if (!(i % 2)) {
+//         arr.push(i);
+//     }
+// }
+// console.log(arr);
+
+//74
+// let arr = [];
+
+// for (let i = 0; i < 100; i++) {
+//     if (i % 2) {
+//         arr.push(i);
+//     }
+// }
+// console.log(arr);
+
+//75
+// let arr = [];
+// let n = +prompt('Кількість елементів:');
+
+// for (let i = 0; i <= (n - 1); i++) {
+//     arr.push(Math.trunc(Math.random() * 732 + 8));
+// }
+// console.log(arr);
+
+//77
+// let arr = [];
+// let n = +prompt('Кількість елементів:');
+
+// for (let i = 0; i <= (n - 1); i++) {
+//     arr.push(Math.trunc(Math.random() * 732 + 8));
+// }
+// console.log(arr);
+
+// for (let i = 2; i < arr.length; i += 3) {
+//     console.log(arr[i]);
+// }
+
+//78
+// let arr = [];
+// let n = +prompt('Кількість елементів:');
+
+// for (let i = 0; i <= (n - 1); i++) {
+//     arr.push(Math.trunc(Math.random() * 732 + 8));
+// }
+// console.log(arr);
+
+// for (let i = 2; i < arr.length; i += 3) {
+//     if (!(arr[i] % 2)) {
+//         console.log(arr[i]);
+//     }
+// }
+
+//80
+// let arr = [];
+// let arr2 = [];
+// let n = +prompt('Кількість елементів:');
+
+// for (let i = 0; i <= (n - 1); i++) {
+//     arr.push(Math.trunc(Math.random() * 732 + 8));
+// }
+// console.log(arr);
+
+// for (let i = 2; i < arr.length; i += 3) {
+//     if (!(arr[i] % 2)) {
+//         arr2.push(arr[i]);
+//     }
+// }
+// console.log(arr2);
+
+//83
+// let arr = [];
+// let n = +prompt('Кількість елементів:');
+
+// for (let i = 0; i <= (n - 1); i++) {
+//     arr.push(Math.trunc(Math.random() * 732 + 8));
+// }
+// console.log(arr);
+
+// for (let i = 0; i < arr.length - 1; i++) {
+//     if (!(arr[i + 1] % 2)) {
+//         console.log(arr[i]);
+//     }
+// }
+
+//84
+// let arr = [100, 250, 50, 168, 120, 345, 188];
+// let sum = 0;
+
+// for (i = 0; i < arr.length; i++) {
+//     sum += arr[i]
+// }
+// console.log(sum / arr.length);
+
+//86
+// let arr1 = [];
+// let arr2 = [];
+
+// for (let i = 0; i < 5; i++) {
+//     arr1.push(Math.trunc(Math.random() * 732 + 8));
+// }
+// for (let i = 0; i < arr1.length; i++) {
+//     arr1[i] *= 5;
+//     arr2[i] = arr1[i];
+// }
+// console.log(arr2);
+
+//87
+// let arr = ['a', 123, '345', -15, 'dsfs', 0, false, 5.4, '7.86'];
+// let arr1 = [];
+
+// for (let i of arr) {
+//     if (typeof i === 'number') {
+//         arr1.push(i);
+//     }
+// }
+// console.log(arr1);
