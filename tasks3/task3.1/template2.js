@@ -34,5 +34,27 @@ for (let i = 0; i < bigText.length; i++) {
     addClass[i].classList.add('element_' + addClass[i].innerText);
 }
 
+// let subHeader = document.getElementsByClassName('sub-header');
+// setCol = prompt();
+// for (let i = 0; i < subHeader.length; i++) {
+//     subHeader[i].style.backgroundColor = setCol;
+// }
 
+// let subHeader = document.getElementsByClassName('sub-header');
+// setCol = prompt();
+// for (let i = 0; i < subHeader.length; i++) {
+//     if (subHeader[i].innerText === 'content 2 segment') {
+//         subHeader[i].style.color = setCol;
+//     }
+// }
+
+// let elemContent=document.getElementsByClassName('content_1');
+// elemContent[0].innerText=prompt();
+
+let pElem=document.getElementsByTagName('p');
+pElem[0].style.paddingLeft='100px';
+pElem[1].style.paddingTop='50px';
+
+let text2=document.getElementsByClassName('text2');
+text2[0].innerText='rrrrrrrrrrrrrrrrrrr';
 
