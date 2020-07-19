@@ -213,7 +213,23 @@ for (let user10 of users10) {
 console.log(arrUsers10);
 
 //25**************************************************
+// for (let user10 of users10) {
+//     let div = document.createElement('div');
+//     div.innerText = `${user10.name}\n${user10.age}\n${user10.status}\n${user10.address}`;
+//     document.body.append(div);
+// }
+
+//26******************************************************
+// for (let user10 of users10) {
+//     let div = document.createElement('div');
+//     div.innerHTML = `<div>${user10.name}</div>\n<div>${user10.age}</div>\n
+//     <div>${user10.status}</div>\n<div>${user10.address}</div>`;
+//     document.body.append(div);
+// }
+
 for (let user10 of users10) {
     let div = document.createElement('div');
-
+    let div2 = document.createElement('div');
+    div.append(div2);
+    document.body.append(div);
 }
