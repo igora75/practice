@@ -328,3 +328,43 @@ function inBlock(arr) {
 //Выведите слово YES, если число N является точной степенью двойки,
 //или слово NO в противном случае.
 //Операцией возведения в степень пользоваться нельзя!
+function num(akk = 1, n) {
+    if (akk <= n) {
+        if (akk === n) {
+            console.log('YES');
+            return;
+        } else {
+            num(akk *= 2, n);
+        }
+    } else console.log('NO');
+}
+
+//Deep Copy
+//реалізувати глибоке копіювання обєкту за допомогою рекурсій
+function copyObj(obj) {
+    let result = {}
+
+    for (let prop in obj) {
+        if (typeof obj[prop] === 'object') {
+            result[prop] = copyObj(obj[prop]);
+        } else {
+            result[prop] = obj[prop];
+        }
+    }
+    return result;
+}
+
+//Вирівняти багаторівневий масив в однорівневий
+let arr = [1, 3, ['Hello', 'Wordd', [9, 6, 1]], ['oops'], 9];
+
+function flatten(arr, result = []) {
+
+    for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+            flatten(arr[i], result);
+        } else {
+            result.push(arr[i]);
+        }
+    }
+    return result;
+}
