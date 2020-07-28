@@ -64,12 +64,12 @@ function minMax() {
 //створена в п.1
 
 //створити функцію яка повертає найбільше число з масиву
-function maxNumArr() {
-    let max = arguments[0][0];
+function maxNumArr(arr) {
+    let max = arr[0];
 
-    for (let i = 0; i < arguments[0].length; i++) {
-        if (arguments[0][i] > max) {
-            max = arguments[0][i];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
         }
     }
 
@@ -77,12 +77,12 @@ function maxNumArr() {
 };
 
 //створити функцію яка повертає найменьше число з масиву
-function minNumArr() {
-    let min = arguments[0][0];
+function minNumArr(arr) {
+    let min = arr[0];
 
-    for (let i = 0; i < arguments[0].length; i++) {
-        if (arguments[0][i] < min) {
-            min = arguments[0][i];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
         }
     }
 
