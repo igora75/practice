@@ -4,8 +4,6 @@ div.id = 'text';
 div.innerText = 'Hi';
 
 let button = document.createElement('button');
-button.style.width = '50px';
-button.style.height = '30px';
 button.innerText = 'Hide';
 
 document.body.append(div, button);
@@ -14,8 +12,6 @@ button.onclick = () => document.getElementById('text').hidden = true;
 
 // - Создайте кнопку, при клике на которую, она будет скрывать сама себя.
 let button2 = document.createElement('button');
-button2.style.width = '50px';
-button2.style.height = '30px';
 button2.innerText = 'Hide2';
 
 document.body.append(button2);
@@ -27,8 +23,6 @@ button2.onclick = () => button2.hidden = true;
 // та повідомити про це користувача
 let input3 = document.createElement('input');
 let button3 = document.createElement('button');
-button3.style.width = '50px';
-button3.style.height = '30px';
 button3.innerText = 'Btn';
 
 document.body.append(input3, button3);
@@ -40,22 +34,31 @@ button3.onclick = () => {
 }
 
 // - Создайте меню, которое раскрывается/сворачивается при клике
-let a = document.createElement('a');
-a.innerText = 'button';
+let a = document.querySelector('.list');
+let subMenu = document.querySelector('.subMenu');
 
-let ul = document.createElement('ul');
-let li = document.createElement('li');
-li.innerText = 'Hi, gays';
+let flag = false;
 
-ul.append(li);
-
-document.body.append(a, ul);
-
-a.onclick = () => ul.hidden === true ? ul.hidden = false : ul.hidden = true;
+a.onclick = () => {
+  if (flag) {
+    subMenu.hidden = false;
+    flag = false;
+  } else {
+    subMenu.hidden = true;
+    flag = true;
+  }
+}
 
 // - Создать список комментариев , пример объекта коментария - {title : 'lorem', body:'lorem ipsum dolo sit ameti'}.
 // Вывести список комментариев в документ, каждый в своем блоке.
 //  Добавьте каждому комментарию по кнопке для сворачивания его body.
+let commentArr = [{ title: 'lorem', body: 'lorem ipsum dolo sit ameti' },
+{ title: 'lorem', body: 'lorem ipsum dolo sit ameti' },
+{ title: 'lorem', body: 'lorem ipsum dolo sit ameti' },
+{ title: 'lorem', body: 'lorem ipsum dolo sit ameti' },
+{ title: 'lorem', body: 'lorem ipsum dolo sit ameti' }];
+
+
 
 // - створити 2 форми  по 2 інпути в кожній. ствоирити кнопку при кліку на яку считується та
 // виводиться на консоль інформація з цих 2х форм.
