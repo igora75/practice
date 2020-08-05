@@ -194,14 +194,74 @@ usersWithAddress.sort((a, b) => b.age - a.age);
 
 //отсортировать его по имени пользователей
 usersWithAddress.sort((a, b) => a.name > b.name ? 1 : -1);
+
 //отсортировать его по имени пользователей в обратном порядке
+usersWithAddress.sort((a, b) => a.name < b.name ? 1 : -1);
+
 //отсортировать его по названию улицы  в алфавитном порядке
+usersWithAddress.sort((a, b) => a.address.street.toLowerCase() > b.address.street.toLowerCase() ? 1 : -1);
+
 //отсортировать его по номеру дома по возрастанию
+usersWithAddress.sort((a, b) => a.address.number - b.address.number);
+
 //отфильтровать (оставить) тех кто младше 30
+let res100 = usersWithAddress.filter(val => val.age < 30);
+
 //отфильтровать (оставить) тех у кого отрицательный статус
+let res101 = usersWithAddress.filter(val => !val.status);
+
 //отфильтровать (оставить) тех у кого отрицательный статус и младше 30 лет
+let res102 = usersWithAddress.filter(val => !val.status && val.age < 30);
+
 //отфильтровать (оставить) тех у кого номер дома четный
-console.log(usersWithAddress);
+let res103 = usersWithAddress.filter(val => !(val.address.number % 2));
 
+//Створити обєкт автомобіля з полями:
+//Марка автомобля, потужність двигуна, власник, ціна, рік випуску.
+//Власник автомобіля теж має бути обєкт, у якого є поля
+//Імя, вік, стаж водіння.
+//Створити не менше 7 та не більше 20 машинок.
+//Зробили половину автопарку ремонт мотору, що збільшить потужність автомобілів на 10% 
+//(переприсвоєння змінної потужності).
+//На відремонтовані автомобілі найняти нових водіїв (переприсвоїти змінну водій).
+//Для початку вкладіть всі наші створені автомобілі в масив cars.
+//Далі необхідно рати кожну другу машинку (цикл з кроком в 2),
+// та робити їй підвищення потужності двигуна на 10% та ціну на 5%
+//Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, 
+//але його вік більший за 25, то необідно відправити його на курси підвищення кваліфікації,
+// що збільшить йому досвід на 1 рік.
+//Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
+let usersWithCars = [{ marka: 'toyota', power: 250, owner: { name: 'ivan', age: 28, period: 10 }, price: 10000, year: 2000 },
+{ marka: 'nissan', power: 150, owner: { name: 'vova', age: 32, period: 14 }, price: 8000, year: 1998 },
+{ marka: 'bmw', power: 220, owner: { name: 'ihor', age: 23, period: 4 }, price: 12000, year: 2004 },
+{ marka: 'audi', power: 340, owner: { name: 'oleh', age: 43, period: 15 }, price: 24000, year: 2013 },
+{ marka: 'mercedes', power: 180, owner: { name: 'petro', age: 19, period: 1 }, price: 28000, year: 2005 },
+{ marka: 'lexus', power: 280, owner: { name: 'viktor', age: 24, period: 3 }, price: 14000, year: 2002 },
+{ marka: 'acura', power: 275, owner: { name: 'nazar', age: 34, period: 5 }, price: 19000, year: 2008 }];
 
+//Задача: дан отсортированный по возрастанию массив целых чисел.
+// Необходимо вернуть наименьший и наибольший индекс заданного элемента.
+//Входные данные: arr — массив целых чисел значения которых по модулю не больше 10.
+// Размер массива не более 10 элементов.
+//Вывод: наибольший и наименьший индекс в массиве заданного элемента.
+// Если такого элемента нет в массиве, выведите -1.
 
+//Пример:
+//Arr = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14]
+//1. Key = 1
+//Answer: MinIndex = 0, MaxIndex = 0.
+//2. Key = 4
+//Answer: MinIndex = 3, MaxIndex = 6.
+let Arr = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14];
+
+function minMax(arr, key) {
+  let min = 0;
+  let max = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === key) {
+      if (!min) min = i;
+      max = i;
+    }
+  }
+  min ? console.log(`MinIndex = ${min}, MaxIndex = ${max}`) : console.log(-1);
+}
