@@ -58,12 +58,47 @@ let commentArr = [{ title: 'lorem', body: 'lorem ipsum dolo sit ameti' },
 { title: 'lorem', body: 'lorem ipsum dolo sit ameti' },
 { title: 'lorem', body: 'lorem ipsum dolo sit ameti' }];
 
+for (let obj of commentArr) {
+  let div = document.createElement('div');
 
+  let h2 = document.createElement('h2');
+  h2.innerText = obj.title;
+
+  let p = document.createElement('p');
+  p.innerText = obj.body;
+
+  let btn = document.createElement('button');
+  btn.innerText = 'hide';
+
+  btn.onclick = () => {
+    if (p.hidden) {
+      p.hidden = false;
+    } else {
+      p.hidden = true;
+    }
+  }
+
+  div.append(h2, p, btn);
+  document.body.append(div);
+};
 
 // - створити 2 форми  по 2 інпути в кожній. ствоирити кнопку при кліку на яку считується та
 // виводиться на консоль інформація з цих 2х форм.
 // Кнопка повинна лежати за межами форм (Щоб ьуникнути  перезавантаження сторінки)
 // Доступ до інпутів через Forms API. Отже дайте формі та інпутам всі необхідні атрибути.
+let btn = document.querySelector('.btnForm');
+
+let in1 = document.querySelector('.inp11');
+let in2 = document.querySelector('.inp12');
+let in3 = document.querySelector('.inp21');
+let in4 = document.querySelector('.inp22');
+
+btn.onclick = () => {
+  console.log(in1.value);
+  console.log(in2.value);
+  console.log(in3.value);
+  console.log(in4.value);
+}
 
 // - Створити функцію, яка генерує таблицю.
 // Перший аргумент визначає кількість строк.
