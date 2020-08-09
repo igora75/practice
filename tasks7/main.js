@@ -104,11 +104,54 @@ btn.onclick = () => {
 // Перший аргумент визначає кількість строк.
 // Другий параметр визначає кліькіть ячеєк в кожній строці.
 // Третій параметр визначає елемент в який потрібно таблицю додати.
+function tableGen(rows, columns, elem) {
+  let el = document.createElement(elem);
+  let tab = document.createElement('table');
 
+  for (let i = 0; i < rows; i++) {
+    let row = document.createElement('tr');
+    tab.append(row);
+    for (let j = 0; j < columns; j++) {
+      let column = document.createElement('td');
+      column.innerText = 'aaaaaa';
+      row.append(column);
+    }
+  }
 
+  el.append(tab);
+  document.body.append(el);
+}
+
+// tableGen(4, 5, 'div')
 // - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 // При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 // (Додатковачастина для завдання)
+function tableGen1(rows, columns, text) {
+  let el = document.createElement('div');
+  let tab = document.createElement('table');
+
+  for (let i = 0; i < rows; i++) {
+    let row = document.createElement('tr');
+    tab.append(row);
+    for (let j = 0; j < columns; j++) {
+      let column = document.createElement('td');
+      column.innerText = text;
+      row.append(column);
+    }
+  }
+
+  el.append(tab);
+  document.body.append(el);
+}
+
+let input111 = document.querySelector('.input1');
+let input222 = document.querySelector('.input2');
+let input333 = document.querySelector('.input3');
+let knopka = document.querySelector('.formBtn');
+
+knopka.onclick = () => {
+  tableGen1(input111.value, input222.value, input333.value);
+}
 
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
 
@@ -118,19 +161,42 @@ btn.onclick = () => {
 // Якщо людина вводить слово і воно міститься в масиві не цензурних слів
 // кинути алерт з попередженням.
 // Перевірку робити при натисканні на кнопку
+let arrMat = ['fffg', 'dsr', 'ahhg', 'xrh', 'pdsfv'];
 
+let input7 = document.createElement('input');
+
+let button7 = document.createElement('button');
+button7.innerText = 'Revise';
+
+button7.onclick = () => {
+  for (let word of arrMat) {
+    if (input7.value === word) alert('no-no-no');
+  }
+}
+
+document.body.append(input7, button7);
 
 // - Сворити масив не цензцрних слів.
 // Сворити інпут текстового типу.
 // Потрібно перевіряти чи не містить ціле речення в собі погані слова.
 // Кинути алерт з попередженням у випадку якщо містить.
 // Перевірку робити при натисканні на кнопку
+let arrMat1 = ['fffg', 'dsr', 'ahhg', 'xrh', 'pdsfv'];
 
+let input8 = document.createElement('input');
 
+let button8 = document.createElement('button');
+button8.innerText = 'Revise';
 
-// -- создать скрипт, который берет считывает на странице (rules.html) текст и 
-//делает сбоку меню-оглавление по всем заголовкам которые есть в тексте.
-// При клике на пункт оглавления вы должны отправляться к этому пункту в тексте
+button8.onclick = () => {
+  for (let word of arrMat1) {
+    for (let inpVal of input8.value.split(' ')) {
+      if (inpVal === word) alert('no-no-no');
+    }
+  }
+}
+
+document.body.append(input8, button8);
 
 // -- взять массив пользователей
 // let usersWithAddress = [
