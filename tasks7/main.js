@@ -154,8 +154,32 @@ knopka.onclick = () => {
 }
 
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
+let imgArr = ['8.jpg', '9.jpg', '10.jpg', '11.jpg', '12.jpg'];
 
+let img = document.createElement('img');
 
+let leftBtn = document.createElement('button');
+let rightBtn = document.createElement('button');
+
+leftBtn.innerText = 'Left';
+rightBtn.innerText = 'Right';
+
+let index = 0;
+img.src = imgArr[index];
+
+leftBtn.onclick = () => {
+  index--;
+  if (index < 0) index = imgArr.length - 1;
+  img.src = imgArr[index];
+}
+
+rightBtn.onclick = () => {
+  index++;
+  if (index > imgArr.length - 1) index = 0;
+  img.src = imgArr[index];
+}
+
+document.body.append(img, leftBtn, rightBtn);
 // - Сворити масив не цензцрних слів.
 // Сворити інпут текстового типу.
 // Якщо людина вводить слово і воно міститься в масиві не цензурних слів
@@ -217,9 +241,63 @@ document.body.append(input8, button8);
 // 2й - оставляет старше 29 лет включительно
 // 3й - оставляет тех у кого город киев
 // Данные выводить в документ
+let usersWithAddress = [
+  { id: 1, name: 'vasya', age: 31, status: false, address: { city: 'Lviv', street: 'Shevchenko', number: 16 } },
+  { id: 2, name: 'petya', age: 30, status: true, address: { city: 'Kyiv', street: 'Shevchenko', number: 1 } },
+  { id: 3, name: 'kolya', age: 29, status: true, address: { city: 'Lviv', street: 'Shevchenko', number: 121 } },
+  { id: 4, name: 'olya', age: 28, status: false, address: { city: 'Ternopil', street: 'Shevchenko', number: 90 } },
+  { id: 5, name: 'max', age: 30, status: true, address: { city: 'Lviv', street: 'Shevchenko', number: 115 } },
+  { id: 6, name: 'anya', age: 31, status: false, address: { city: 'Kyiv', street: 'Shevchenko', number: 2 } },
+  { id: 7, name: 'oleg', age: 28, status: false, address: { city: 'Ternopil', street: 'Shevchenko', number: 22 } },
+  { id: 8, name: 'andrey', age: 29, status: true, address: { city: 'Lviv', street: 'Shevchenko', number: 43 } },
+  { id: 9, name: 'masha', age: 30, status: true, address: { city: 'Kyiv', street: 'Shevchenko', number: 12 } },
+  { id: 10, name: 'olya', age: 31, status: false, address: { city: 'Lviv', street: 'Shevchenko', number: 16 } },
+  { id: 11, name: 'max', age: 31, status: true, address: { city: 'Ternopil', street: 'Shevchenko', number: 121 } }
+];
 
+let div100 = document.createElement('div');
+div100.innerText = toString(usersWithAddress);
 
+let check1 = document.createElement('input');
+let check2 = document.createElement('input');
+let check3 = document.createElement('input');
 
+let lab1 = document.createElement('label');
+let lab2 = document.createElement('label');
+let lab3 = document.createElement('label');
+
+lab1.innerText = 'со статусом false';
+lab2.innerText = 'старше 29 лет';
+lab3.innerText = 'город киев';
+
+let butt = document.createElement('button');
+butt.innerText = 'check';
+
+check1.type = 'checkbox';
+check2.type = 'checkbox';
+check3.type = 'checkbox';
+
+butt.onclick = () => {
+  let myArr = JSON.parse(toString(usersWithAddress));
+
+  if (check1.checked) {
+    myArr = myArr.filter(elem => !elem.status);
+  };
+  if (check2.checked) {
+    myArr = myArr.filter(elem => elem.age >= 29);
+  };
+  if (check3.checked) {
+    myArr = myArr.filter(elem => elem.address.city === 'Kyiv');
+  };
+  div100.innerText = '';
+  div100.innerText = toString(myArr);
+}
+
+document.body.append(div100, lab1, check1, lab2, check2, lab3, check3, butt);
+
+function toString(arr) {
+  return JSON.stringify(arr);
+}
 // *****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .Функция создает в боди 2 кнопки (назад/вперед)
 // при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед", вы переходите к следующему дочернему элементу (лежащему на одном уровне)
 // НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.
