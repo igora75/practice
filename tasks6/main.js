@@ -237,8 +237,20 @@ let usersWithCars = [{ marka: 'toyota', power: 250, owner: { name: 'ivan', age: 
 { marka: 'audi', power: 340, owner: { name: 'oleh', age: 43, period: 15 }, price: 24000, year: 2013 },
 { marka: 'mercedes', power: 180, owner: { name: 'petro', age: 19, period: 1 }, price: 28000, year: 2005 },
 { marka: 'lexus', power: 280, owner: { name: 'viktor', age: 24, period: 3 }, price: 14000, year: 2002 },
-{ marka: 'acura', power: 275, owner: { name: 'nazar', age: 34, period: 5 }, price: 19000, year: 2008 }];
+{ marka: 'acura', power: 275, owner: { name: 'nazar', age: 34, period: 4 }, price: 19000, year: 2008 }];
 
+for (let i = 0; i < usersWithCars.length; i += 2) {
+  usersWithCars[i].power += usersWithCars[i].power / 10;
+  usersWithCars[i].price += usersWithCars[i].price / 20;
+}
+
+let sumPrice = 0;
+for (let i of usersWithCars) {
+  if (i.owner.period < 5 && i.owner.age > 25) i.owner.period++;
+  sumPrice += i.price;
+}
+
+console.log(sumPrice);
 //Задача: дан отсортированный по возрастанию массив целых чисел.
 // Необходимо вернуть наименьший и наибольший индекс заданного элемента.
 //Входные данные: arr — массив целых чисел значения которых по модулю не больше 10.
