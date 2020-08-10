@@ -46,7 +46,7 @@ const resultA = wordArr.map(elem => elem + '!');
 //- пройтись по ньому та додати кожному юзеру поле id - яке характеризує унікальний індентифікатор 
 //(По якому принципу його створювати - ваше рішення), та зберегти це в новий масив (первинний масив залишиться без змін)
 //- відсортувати його за індентифікатором
-let users = [{ name: 'vasya', age: 31, status: false }, { name: 'petya', age: 30, status: true },
+let users = [{ name: 'vasya', age: { fgf: 1, yuj: 2 }, status: false }, { name: 'petya', age: 30, status: true },
 { name: 'kolya', age: 29, status: true }, { name: 'olya', age: 28, status: false },
 { name: 'max', age: 30, status: true }, { name: 'anya', age: 31, status: false },
 { name: 'oleg', age: 28, status: false }, { name: 'andrey', age: 29, status: true },
@@ -59,10 +59,11 @@ users.sort((a, b) => b.age - a.age);
 users.sort((a, b) => a.name.length - b.name.length);
 users.sort((a, b) => b.name.length - a.name.length);
 
-let res = users.map((current, index) => {
-  let movie = Object.assign({}, current);
-  movie.id = `user${index + 1}`;
-  return movie;
+let newArray = [...users];
+let res = newArray.map((current, index) => {
+
+  current.id = `user${index + 1}`;
+  return current;
 });
 
 res.sort((a, b) => a.id.slice(4) - b.id.slice(4));
