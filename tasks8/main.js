@@ -99,19 +99,22 @@
 // При нажати на нее появляется форма, в которой есть все необходимые инпуты для редактирования,
 // которые уже заполнены данными объекта
 const ARRAY_USERS = 'ARRAY_USERS';
+let tempUser = {};
+
 const content = document.querySelector('.content');
 let form2 = document.querySelector('.form2');
 
 form2.submit1.onclick = () => {
-    let person = {};
+    let person = { ...tempUser };
+    tempUser = {};
     for (let i = 0; i < form2.children.length; i++) {
         const formEl = form2.children[i];
-        if (formEl.name && formEl.tipe !== 'submit') {
+        if (formEl.name && formEl.type !== 'submit') {
             person[formEl.name] = formEl.value;
         }
     }
-
-    person.id = new Date().getTime();
+    if (!person.id)
+        person.id = new Date().getTime();
     saveUser(person);
 }
 
@@ -193,10 +196,9 @@ function editUser(id) {
     const parse = JSON.parse(localStorage.getItem(ARRAY_USERS));
     const user = parse.find(user => user.id === id);
 
-
     for (let i = 0; i < form2.children.length; i++) {
         const formEl = form2.children[i];
-        if (formEl.name && formEl.tipe !== 'submit') {
+        if (formEl.name && formEl.type !== 'submit') {
             for (const key in user) {
                 if (formEl.name === key) {
                     formEl.value = user[key];
@@ -204,6 +206,5 @@ function editUser(id) {
             }
         }
     }
-
-
+    tempUser = user;
 }
