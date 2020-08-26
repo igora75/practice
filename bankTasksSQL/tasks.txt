@@ -41,8 +41,9 @@ WHERE CreditState='Not returned' AND Currency='Gryvnia' AND Sum>5000;
 
 9. +Порахувати кількість клієнтів усіх відділень та лише львівських відділень.
 
-
-
+SELECT COUNT(Department_idDepartment) FROM client;
+SELECT COUNT(Department_idDepartment) FROM client JOIN department ON Department_idDepartment=idDepartment
+WHERE DepartmentCity='Lviv';
 
 10. Знайти кредити, які мають найбільшу суму для кожного клієнта окремо.
 
