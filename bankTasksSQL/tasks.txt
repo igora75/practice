@@ -15,7 +15,7 @@ SELECT * FROM client WHERE Education='high' ORDER BY LastName;
 
 4. +Виконати сортування у зворотньому порядку над таблицею Заявка і вивести 5 останніх елементів.
 
-SELECT * FROM application WHERE idApplication<6 ORDER BY idApplication DESC;
+SELECT * FROM client ORDER BY idClient DESC LIMIT 5;
 
 
 5. +Вивести усіх клієнтів, чиє прізвище закінчується на OV чи OVA.
