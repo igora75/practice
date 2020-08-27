@@ -1,11 +1,11 @@
 1. +Вибрати усіх клієнтів, чиє ім'я має менше ніж 6 символів.
 
-SELECT * FROM bank.client WHERE LENGTH(FirstName)<6;
+SELECT * FROM client WHERE LENGTH(FirstName)<6;
 
 
 2. +Вибрати львівські відділення банку.+
 
-SELECT * FROM bank.department WHERE DepartmentCity='Lviv';
+SELECT * FROM department WHERE DepartmentCity='Lviv';
 
 
 3. +Вибрати клієнтів з вищою освітою та посортувати по прізвищу.
@@ -119,29 +119,35 @@ OR LastName LIKE '_y%';
 
 Знайти львівські відділення, які видали кредитів на загальну суму більше ніж 5000
 
-
-
-
+SELECT idDepartment,SUM(Sum) s FROM department
+JOIN client ON idDepartment=Department_idDepartment
+JOIN application ON idClient=Client_idClient
+WHERE DepartmentCity='Lviv' GROUP BY idDepartment
+HAVING s>5000;
 
 
 Знайти клієнтів, які повністю погасили кредити на суму більше ніж 5000
 
-
-
+SELECT *,SUM(Sum) s FROM application JOIN client ON Client_idClient=idClient
+WHERE CreditState='Returned' GROUP BY idClient HAVING s>5000;
 
 
 /* Знайти максимальний неповернений кредит.*/
 
-
+SELECT * FROM application WHERE CreditState='Not returned'
+ORDER BY Sum DESC LIMIT 1;
 
 
 /*Знайти клієнта, сума кредиту якого найменша*/
 
-
+SELECT *,SUM(Sum) s FROM application JOIN client ON Client_idClient=idClient
+GROUP BY idClient ORDER BY s LIMIT 1;
 
 
 /*Знайти кредити, сума яких більша за середнє значення усіх кредитів*/
 
+SELECT * FROM application
+WHERE Sum>(SELECT AVG(Sum) FROM application);
 
 
 /*Знайти клієнтів, які є з того самого міста, що і клієнт, який взяв найбільшу кількість кредитів*/
