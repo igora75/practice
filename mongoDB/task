@@ -39,10 +39,54 @@ db.getCollection('students').find(
 
 
 6) Знайти найкращого учня
+
+db.getCollection('students').find()
+.sort({ avgScore: -1 }).limit(1)
+
+
 7) Знайти найгіршого учня
+
+db.getCollection('students').find()
+.sort({ avgScore: 1 }).limit(1)
+
+
 8) Знайти топ 3 учнів
+
+db.getCollection('students').find()
+.sort({ avgScore: -1 }).limit(3)
+
+
 9) Знайти середній бал по школі
+
+db.getCollection('students').aggregate([
+    {
+       $group: {
+            _id: null,
+            avgOnSchool: {
+                $avg: '$avgScore'
+            }
+        } 
+    }
+])
+
+
 10) Знайти середній бал дітей які вивчають математику або фізику
+
+db.getCollection('students').aggregate([
+    {
+        $match: { lessons: { $in: ['mathematics', 'physics']}}
+    },
+    { 
+        $group: {
+            _id: null,
+            avgOnSchool: {
+                $avg: '$avgScore'
+            }
+        } 
+    }
+])
+
+
 11) Знайти середній бал по 2 класі
 12) Знайти дітей з не повною сімєю
 13) Знайти батьків які не працюють
