@@ -395,3 +395,11 @@
 //         document.write('роби що хочеш');
 
 // }
+let n = 7;
+let num = '';
+while (n >= 8) {
+    let akk = parseInt(n % 8);
+    num = akk + num;
+    n = parseInt(n / 8);
+}
+console.log(n + num)
