@@ -20,26 +20,35 @@ app.set('view engine', '.hbs');
 //   usersArr.push({ name, age });
 //   res.redirect('/user');
 // }));
-let dataFile = {
-  users: [],
-};
 
 app.get('/', (req, res) => {
   res.render('main');
 });
 
+app.get('/error', ((req, res) => {
+  res.render('error', { error: 'Email already exists' });
+}));
+
 app.post('/login', (req, res) => {
-  // const { name, email, password } = req.body;
+  let dataFile = {
+    users: [],
+  };
+  const { email } = req.body;
   fs.readFile('users.json', (err, data) => {
     if (err) throw err;
     dataFile = JSON.parse(data.toString());
-    dataFile.users.push(req.body);
-    fs.writeFile('users.json', JSON.stringify(dataFile), (error) => {
-      if (error) throw error;
-    });
+    const result = dataFile.users.find((item) => item.email === email);
+    if (result) {
+      res.redirect('/error');
+    } else {
+      dataFile.users.push(req.body);
+      const jsonStr = JSON.stringify(dataFile, null, 2);
+      fs.writeFile('users.json', jsonStr, (error) => {
+        if (error) throw error;
+        res.json(dataFile.users);
+      });
+    }
   });
-
-  res.json('OK');
 });
 
 app.listen(3000);
