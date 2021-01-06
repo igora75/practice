@@ -1,26 +1,6 @@
 {
   "users": [
     {
-      "name": "1",
-      "email": "2",
-      "password": "3"
-    },
-    {
-      "name": "a",
-      "email": "s",
-      "password": "d"
-    },
-    {
-      "name": "ku",
-      "email": "kf",
-      "password": "lr"
-    },
-    {
-      "name": "q",
-      "email": "w",
-      "password": "e"
-    },
-    {
       "name": "q",
       "email": "w",
       "password": "e"
@@ -36,34 +16,19 @@
       "password": "e"
     },
     {
-      "name": "aaaa",
-      "email": "bbbbb",
-      "password": "ccccc"
+      "name": "w",
+      "email": "www",
+      "password": "w"
     },
     {
-      "name": "1",
-      "email": "0000000",
-      "password": "ppp"
+      "name": "5",
+      "email": "5",
+      "password": "5"
     },
     {
-      "name": "q",
-      "email": "w",
-      "password": "e"
-    },
-    {
-      "name": "2",
-      "email": "333333",
-      "password": "4"
-    },
-    {
-      "name": "z",
-      "email": "z",
-      "password": "z"
-    },
-    {
-      "name": "x",
-      "email": "x",
-      "password": "x"
+      "name": "5",
+      "email": "9999",
+      "password": "g"
     }
   ]
 }
