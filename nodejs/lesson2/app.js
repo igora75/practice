@@ -13,13 +13,22 @@ let errTxt = '';
 let dataFile = {
   users: [],
 };
+let logStatus = false;
+let afterLog = true;
 
 app.get('/', (req, res) => {
+  logStatus = false;
+  afterLog = true;
   res.render('main');
 });
 
 app.get('/users', (req, res) => {
-  res.render('users', { users: dataFile.users });
+  if (afterLog) {
+    errTxt = 'Please login';
+    res.redirect('/error');
+  } else {
+    res.render('users', { users: dataFile.users, isLogin: logStatus });
+  }
 });
 
 app.get('/error', (req, res) => {
@@ -37,6 +46,8 @@ app.post('/login', (req, res) => {
     dataFile = JSON.parse(data.toString());
     const result = dataFile.users.find((item) => item.email === email);
     if (result) {
+      logStatus = true;
+      afterLog = false;
       res.redirect('/users');
     } else {
       res.redirect('/');
@@ -46,6 +57,10 @@ app.post('/login', (req, res) => {
 
 app.post('/logBtn', (req, res) => {
   res.redirect('/login');
+});
+
+app.post('/logout', (req, res) => {
+  res.redirect('/');
 });
 
 app.post('/reg', (req, res) => {
@@ -62,6 +77,8 @@ app.post('/reg', (req, res) => {
       const jsonStr = JSON.stringify(dataFile, null, 2);
       fs.writeFile('users.json', jsonStr, (error) => {
         if (error) throw error;
+        logStatus = false;
+        afterLog = false;
         res.redirect('/users');
       });
     }

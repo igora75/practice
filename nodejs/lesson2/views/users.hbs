@@ -11,5 +11,12 @@
 {{#each users}}
     <div>{{this.name}} {{this.email}} {{this.password}}</div>
 {{/each}}
+
+{{#if isLogin}}
+    <form action="/logout" method="post">
+        <input type="submit" value="LOGOUT">
+    </form>
+{{/if}}
+
 </body>
 </html>
